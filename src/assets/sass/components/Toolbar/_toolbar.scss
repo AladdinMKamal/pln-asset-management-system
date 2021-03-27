@@ -1,0 +1,22 @@
+.toolbar {
+    header {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .title {
+            margin: 21px 0 21px 5%;
+            line-height: 24px;
+            font-size: 21px;
+            color: #252631;
+        }
+
+        img {
+            width: 36px;
+            height: 36px;
+            margin: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+}

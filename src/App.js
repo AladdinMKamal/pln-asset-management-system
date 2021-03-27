@@ -1,8 +1,10 @@
+import Layout from './layout';
+
+import "./assets/sass/App.scss";
+
 function App() {
   return (
-    <div style={{ textAlign: "center" }}>
-      <h1>Welcome to PLN Asset Management System</h1>
-    </div>
+    <Layout />
   );
 }
 
