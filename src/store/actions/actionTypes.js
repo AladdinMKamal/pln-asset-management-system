@@ -1,0 +1,2 @@
+export const EDIT_RECORD = 'EDIT_RECORD';
+export const DELETE_RECORD = 'DELETE_RECORD';

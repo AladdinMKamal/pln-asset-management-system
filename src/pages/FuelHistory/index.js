@@ -6,7 +6,7 @@ import Edit from './Edit';
 import Delete from './Delete';
 
 function FuelHistory(props) {
-    const [openEdit, setOpenEdit] = useState(true);
+    const [openEdit, setOpenEdit] = useState(false);
     const [openDelete, setOpenDelete] = useState(false);
 
     const handleOpenDelete = () => {
