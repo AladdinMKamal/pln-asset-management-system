@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -8,6 +9,7 @@ import CustomSidebar from '../components/Sidebar';
 import CustomToolbar from '../components/Toolbar';
 
 import Config from '../config';
+import routes from '../routes';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -51,6 +53,28 @@ const Layout = props => {
 
     const container = props.window !== undefined ? () => window().document.body : undefined;
 
+    const allRoutes = (
+        <Switch>
+            {routes.map(route => {
+                return (
+                    route.pages.length > 0
+                        ? route.pages.map(page => {
+                            return (
+                                <Route
+                                    key={page.name}
+                                    exact
+                                    path={page.path}
+                                    component={() => <page.component />}
+                                />
+                            )
+                        })
+                        : null
+                )
+            })}
+            <Redirect to="/" />
+        </Switch>
+    )
+
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -66,7 +90,7 @@ const Layout = props => {
             </nav>
             <main className={classes.content}>
                 <div className={classes.toolbar} style={{ textAlign: "center" }} />
-                <h1 style={{textAlign:"center"}}>Welcome to PLN Asset Management System</h1>
+                {allRoutes}
             </main>
         </div>
     );
