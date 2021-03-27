@@ -1,5 +1,15 @@
 @import "./components/components";
+@import "./pages/pages";
 
 * {
     font-family: "Rubik", Arial, Helvetica, sans-serif !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.divider {
+    background-color: #e8ecef !important;
 }

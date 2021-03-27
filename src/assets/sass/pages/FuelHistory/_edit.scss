@@ -1,0 +1,52 @@
+.edit-title {
+    margin: 0;
+    padding: 20px 0;
+    line-height: 24px;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+}
+
+.error {
+    position: absolute;
+    bottom: -20px;
+    color: red;
+}
+
+label {
+    margin: 20px 0 5px 0;
+    color: #778ca2;
+    font-weight: 400;
+}
+
+.inputs {
+    height: 50px;
+}
+
+.edit-buttons {
+    display: flex;
+    justify-content: flex-end;
+
+    .edit-buttons-cancel {
+        margin-right: 20px;
+        color: #778ca2;
+        text-transform: capitalize;
+        padding: 10px 20px;
+        border: 1px solid #778ca2;
+        background-color: #fff;
+    }
+    .edit-buttons-save {
+        color: #fff;
+        padding: 10px 25px;
+        text-transform: capitalize;
+        border: 1px solid #778ca2;
+        background-color: #4d7cfe;
+    }
+}
+
+.close-icon-edit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 25px;
+    cursor: pointer;
+}

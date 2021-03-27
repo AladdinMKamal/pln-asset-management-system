@@ -1,0 +1,41 @@
+.delete-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 30px;
+
+    .delete-buttons-cancel {
+        margin-right: 20px;
+        color: #f50057;
+        text-transform: capitalize;
+        padding: 10px 20px;
+        border: 1px solid #f50057;
+        background-color: #fff;
+    }
+    .delete-buttons-delete {
+        color: #fff;
+        padding: 10px 25px;
+        text-transform: capitalize;
+        border: 1px solid #f50057;
+        background-color: #f50057;
+    }
+}
+
+.close-icon-delete {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 25px;
+    cursor: pointer;
+}
+
+.delete-title {
+    margin: 0;
+    padding: 20px 0;
+    line-height: 24px;
+    font-size: 20px !important;
+    font-weight: 300 !important;
+}
+
+.delete-body {
+    margin-top: 20px;
+}
