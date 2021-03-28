@@ -1,0 +1,51 @@
+.table-controls {
+    margin-top: 46px;
+    margin-bottom: 10px;
+
+    span {
+        font-size: 14px;
+        color: #778ca2;
+        line-height: 46px;
+        margin-right: 14px;
+    }
+
+    .pag-btn {
+        background-color: #fff !important;
+        border: 1px solid #e8ecef;
+        width: 47px;
+        height: 47px;
+    }
+
+    .btn-prev {
+        border-radius: 4px 0px 0px 4px;
+    }
+
+    .btn-next {
+        border-radius: 0px 4px 4px 0px;
+        margin-right: 15px;
+    }
+
+    .timezone,
+    .sort {
+        background-color: #fff;
+        border: 1px solid #e8ecef;
+        color: #98a9bc;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .timezone {
+        width: 186px;
+        padding: 5px 13px 0 18px;
+        margin-right: 15px;
+    }
+
+    .sort {
+        width: 146px;
+        padding: 0 14px 0 14px;
+        & > * {
+            color: #000;
+            padding-top: 8px;
+        }
+    }
+}

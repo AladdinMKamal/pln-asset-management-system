@@ -1,5 +1,9 @@
+$menu-item-height: 46px;
+
 .menu-list-item {
     height: 64px;
+    padding: 0 !important;
+    margin:0 !important;
 
     .list-item-icon {
         margin-left: 18px;
@@ -24,11 +28,10 @@
     color: black;
     text-decoration: none;
     width: 100%;
-    line-height: 46px;
+    line-height: $menu-item-height;
     padding-left: 26px;
     box-sizing: border-box;
     font-size: 14px;
-    margin-right: 10px;
     color: #778ca2;
 
     &:hover {
@@ -44,7 +47,7 @@
         position: absolute;
         left: 0;
         width: 5px;
-        height: 46px;
+        height: $menu-item-height;
         content: "";
         border-left: 3px solid #4d7cfe;
         padding-left: 0px;
@@ -54,5 +57,7 @@
 .drawer-image {
     width: 29px;
     height: 39px;
+    text-align: center;
     margin: 13px 0 0 102px;
+    cursor: pointer;
 }

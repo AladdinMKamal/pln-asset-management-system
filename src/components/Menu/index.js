@@ -28,7 +28,7 @@ const Menu = props => {
     return (
         <div>
             <div className={classes.toolbar} style={{ marginBottom: "-10px" }}>
-                <img src={sidebarImg} alt="Profile" className="drawer-image" />
+                <img src={sidebarImg} alt="Profile" className="drawer-image" onClick={()=>props.history.push("/")} />
             </div>
             <List>
                 {routes.map((route, index) => {
@@ -71,4 +71,4 @@ const Menu = props => {
     )
 };
 
-export default Menu;
+export default withRouter(Menu);

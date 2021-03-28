@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import * as yup from "yup";
 import { useForm, Controller } from "react-hook-form";
@@ -24,6 +24,8 @@ import arrowDown from '../../assets/img/ico/arrow-down.png';
 import date from '../../assets/img/ico/date.png';
 import close from '../../assets/img/ico/close.png';
 
+import * as TableData from '../../data/TableData';
+
 const useStyles = makeStyles((theme) => ({
     paper: {
         width: "60vw",
@@ -41,32 +43,39 @@ const useStyles = makeStyles((theme) => ({
 
 const schema = yup.object().shape({
     vehicle: yup.string().required(),
-    odometer: yup.number().positive().integer().required(),
-    date: yup.date().required(),
-    volume: yup.number().positive().required()
+    odometer: yup.number().typeError('Amount must be a number').positive().integer().required(),
+    date: yup.date().typeError('Date is invalid').required(),
+    volume: yup.number().typeError('Amount must be a number').positive().required()
 });
 
 export default function Edit(props) {
 
     const classes = useStyles();
 
-    const { handleSubmit, errors, control } = useForm({
+    const { handleSubmit, errors, control, setValue } = useForm({
         resolver: yupResolver(schema)
     });
 
     const onSubmit = (data) => {
-        props.handleEdit(data);
+        props.handleEdit(props.id, data);
     };
+
+    useEffect(() => {
+        setValue("odometer", props?.editData?.cost?.cost);
+        setValue("volume", props?.editData?.volume);
+        setValue("date", "2000-01-01");
+        setValue("fuel", "1");
+    }, [setValue, props.editData])
 
     return (
         <div className={classes.paper} style={{ position: "relative" }}>
             <Container>
-                <img src={close} className="close-icon-edit" onClick={props.onCancel} />
+                <img src={close} className="close-icon-edit" onClick={props.onCancel} alt="close" />
                 <Typography variant="h5" className="edit-title">
                     Edit Fuel Entry
             </Typography>
             </Container>
-            <Divider className="divider" style={{ marginBottom: "5px" }} />
+            <Divider style={{ marginBottom: "5px" }} />
             <form noValidate onSubmit={handleSubmit(onSubmit)}>
                 <Container>
                     <GridContainer>
@@ -79,7 +88,7 @@ export default function Edit(props) {
                                             className="inputs"
                                             displayEmpty
                                             error={!!errors.vehicle}
-                                            endAdornment={<InputAdornment position="end"><img src={arrowDown} /></InputAdornment>}
+                                            endAdornment={<InputAdornment position="end"><img src={arrowDown} alt="drop" /></InputAdornment>}
                                             inputProps={{
                                                 classes: {
                                                     icon: classes.icon,
@@ -87,9 +96,13 @@ export default function Edit(props) {
                                             }}
                                         >
                                             <MenuItem value="" disabled><em>Select one</em></MenuItem>
-                                            <MenuItem value={10}>Ten</MenuItem>
-                                            <MenuItem value={20}>Twenty</MenuItem>
-                                            <MenuItem value={30}>Thirty</MenuItem>
+                                            {TableData.ShortCarsList.map((car, index) => {
+                                                return (
+                                                    <MenuItem key={car.name} value={car.name}>
+                                                        <span> {car.name}</span>
+                                                    </MenuItem>
+                                                )
+                                            })}
                                         </Select>
                                     }
                                     control={control}
@@ -109,7 +122,7 @@ export default function Edit(props) {
                                             type="date"
                                             className="inputs"
                                             error={!!errors.date}
-                                            startAdornment={<InputAdornment position="start" ><img style={{ margin: "0 20px" }} src={date} /></InputAdornment>}
+                                            startAdornment={<InputAdornment position="start" ><img style={{ margin: "0 20px" }} src={date} alt="date" /></InputAdornment>}
                                             classes={{
                                                 icon: classes.icon,
                                             }}
@@ -171,7 +184,8 @@ export default function Edit(props) {
                                         <Select
                                             className="inputs"
                                             displayEmpty
-                                            endAdornment={<InputAdornment position="end"><img src={arrowDown} /></InputAdornment>}
+                                            defaultValue={1}
+                                            endAdornment={<InputAdornment position="end"><img src={arrowDown} alt="drop" /></InputAdornment>}
                                             inputProps={{
                                                 classes: {
                                                     icon: classes.icon,
@@ -179,9 +193,9 @@ export default function Edit(props) {
                                             }}
                                         >
                                             <MenuItem value="" disabled><em>Select one</em></MenuItem>
-                                            <MenuItem value={10}>Ten</MenuItem>
-                                            <MenuItem value={20}>Twenty</MenuItem>
-                                            <MenuItem value={30}>Thirty</MenuItem>
+                                            <MenuItem value={1}>One</MenuItem>
+                                            <MenuItem value={2}>Two</MenuItem>
+                                            <MenuItem value={3}>Three</MenuItem>
                                         </Select>
                                     }
                                     control={control}
@@ -191,7 +205,7 @@ export default function Edit(props) {
                         </GridItem>
                     </GridContainer>
                 </Container>
-                <Divider className="divider" style={{ margin: "90px 0 10px 0" }} />
+                <Divider style={{ margin: "90px 0 10px 0" }} />
                 <Container>
                     <div className="edit-buttons">
                         <Button className="edit-buttons-cancel" onClick={props.onCancel} variant="contained">Cancel</Button>

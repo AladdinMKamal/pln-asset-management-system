@@ -25,7 +25,7 @@ export default function Delete(props) {
     return (
         <div className={classes.paper} style={{ position: "relative" }}>
             <Container>
-                <img src={close} className="close-icon-delete" onClick={props.onCancel} />
+                <img src={close} className="close-icon-delete" onClick={props.onCancel} alt="close" />
                 <Typography variant="h5" className="delete-title">
                     Delete
             </Typography>
