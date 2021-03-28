@@ -25,8 +25,7 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             width: `calc(100% - ${Config.drawerWidth}px)`,
             marginLeft: Config.drawerWidth,
-            borderBottom: "1px solid #E8ECEF",
-            position: "absolute",
+            borderBottom: "1px solid #E8ECEF"
         }
     },
     menuButton: {

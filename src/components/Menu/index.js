@@ -28,7 +28,7 @@ const Menu = props => {
     return (
         <div>
             <div className={classes.toolbar} style={{ marginBottom: "-10px" }}>
-                <img src={sidebarImg} alt="Profile" className="drawer-image" onClick={()=>props.history.push("/")} />
+                <img src={sidebarImg} alt="Profile" className="drawer-image" onClick={() => props.history.push("/")} />
             </div>
             <List>
                 {routes.map((route, index) => {
@@ -41,7 +41,7 @@ const Menu = props => {
                                 className="menu-list-item"
 
                             >
-                                <ListItemIcon className="list-item-icon"><img src={route.icon} /></ListItemIcon>
+                                <ListItemIcon className="list-item-icon"><img src={route.icon} alt="icon" /></ListItemIcon>
                                 <ListItemText className="list-item-text"> {route.name}</ListItemText>
                             </ListItem>
 
