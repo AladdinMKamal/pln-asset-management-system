@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 const schema = yup.object().shape({
     vehicle: yup.string().required(),
     odometer: yup.number().positive().integer().required(),
-    startdate: yup.date().required(),
+    date: yup.date().required(),
     volume: yup.number().positive().required()
 });
 
@@ -78,6 +78,7 @@ export default function Edit(props) {
                                         <Select
                                             className="inputs"
                                             displayEmpty
+                                            error={!!errors.vehicle}
                                             endAdornment={<InputAdornment position="end"><img src={arrowDown} /></InputAdornment>}
                                             inputProps={{
                                                 classes: {
@@ -107,6 +108,7 @@ export default function Edit(props) {
                                         <OutlinedInput
                                             type="date"
                                             className="inputs"
+                                            error={!!errors.date}
                                             startAdornment={<InputAdornment position="start" ><img style={{ margin: "0 20px" }} src={date} /></InputAdornment>}
                                             classes={{
                                                 icon: classes.icon,
@@ -127,6 +129,7 @@ export default function Edit(props) {
                                     as={
                                         <OutlinedInput
                                             type="number"
+                                            error={!!errors.odometer}
                                             endAdornment={<InputAdornment position="end">Kms</InputAdornment>}
                                             className="inputs"
                                         />
@@ -147,6 +150,7 @@ export default function Edit(props) {
                                     as={
                                         <OutlinedInput
                                             type="number"
+                                            error={!!errors.volume}
                                             endAdornment={<InputAdornment position="end">Ltrs</InputAdornment>}
                                             className="inputs"
                                         />

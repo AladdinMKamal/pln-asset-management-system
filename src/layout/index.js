@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
             width: `calc(100% - ${Config.drawerWidth}px)`,
             marginLeft: Config.drawerWidth,
             borderBottom: "1px solid #E8ECEF",
-            position:"absolute",
+            position: "absolute",
         }
     },
     menuButton: {
@@ -72,7 +72,7 @@ const Layout = props => {
                         : null
                 )
             })}
-            <Redirect to="/" />
+            <Redirect to="/fuel-history" />
         </Switch>
     )
 
