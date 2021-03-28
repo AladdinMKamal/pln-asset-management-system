@@ -20,7 +20,7 @@ function Table(props) {
             rowHeight={60}
             rowClassName="table-row"
             headerHeight={46}
-            resizable={false}
+            resizable={true}
             showColumnMenuTool={false}
             renderPaginationToolbar={empty}
         />

@@ -1,6 +1,9 @@
 .table-controls {
     margin-top: 46px;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 
     span {
         font-size: 14px;
@@ -31,7 +34,6 @@
         border: 1px solid #e8ecef;
         color: #98a9bc;
         font-size: 14px;
-        box-sizing: border-box;
     }
 
     .timezone {
@@ -46,6 +48,24 @@
         & > * {
             color: #000;
             padding-top: 8px;
+        }
+    }
+    @media screen and (max-width: 850px) {
+        justify-content: center;
+
+        .pag-btns,
+        span {
+            flex-basis: 40%;
+        }
+        .timezone,
+        .sort {
+            flex-basis: 15%;
+            margin-top: 10px;
+            margin-right: 0;
+        }
+
+        .timezone {
+            margin-right: 10px;
         }
     }
 }

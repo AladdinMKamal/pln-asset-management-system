@@ -61,7 +61,7 @@ function FuelHistory(props) {
             header: 'Vehicle',
             sortable: true,
             defaultFlex: 3,
-            defaultWidth: 130,
+            minWidth: 200,
             maxWidth: 350,
             headerProps: { className: 'table-header' },
             render: ({ value }) => {
@@ -81,7 +81,7 @@ function FuelHistory(props) {
             header: 'Time',
             sortable: true,
             defaultFlex: 1,
-            defaultWidth: 20,
+            minWidth: 80,
             maxWidth: 210,
             headerProps: { className: 'table-header' }
         },
@@ -90,7 +90,7 @@ function FuelHistory(props) {
             header: 'Total km',
             sortable: true,
             defaultFlex: 1,
-            defaultWidth: 20,
+            minWidth: 80,
             maxWidth: 210,
             headerProps: { className: 'table-header' },
             render: ({ value }) => `${value} km`
@@ -100,7 +100,7 @@ function FuelHistory(props) {
             header: 'Volume',
             sortable: true,
             defaultFlex: 1,
-            defaultWidth: 20,
+            minWidth: 80,
             maxWidth: 210,
             headerProps: { className: 'table-header' },
             render: ({ value }) => `${value} L`
@@ -110,7 +110,7 @@ function FuelHistory(props) {
             header: 'Cost',
             sortable: true,
             defaultFlex: 1,
-            defaultWidth: 20,
+            minWidth: 80,
             maxWidth: 210,
             headerProps: { className: 'table-header' },
             render: ({ value }) => {
@@ -129,13 +129,13 @@ function FuelHistory(props) {
             header: 'Actions',
             sortable: true,
             defaultFlex: 1,
-            defaultWidth: 20,
+            minWidth: 80,
             maxWidth: 120,
             headerProps: { className: 'table-header' },
             render: ({ value }) => {
                 return (
                     <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-                        <img src={editIcon} style={{ cursor: "pointer" }} onClick={() => { setEditData(records[value]); setEditId(value); handleOpenEdit(); console.log(editData) }} alt="" />
+                        <img src={editIcon} style={{ cursor: "pointer" }} onClick={() => { setEditData(records[value]); setEditId(value); handleOpenEdit() }} alt="" />
                         <img src={deleteIcon} style={{ cursor: "pointer" }} onClick={() => { setDeleteId(value); handleOpenDelete() }} alt="" />
                     </div>
                 )
