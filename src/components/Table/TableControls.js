@@ -9,9 +9,6 @@ import arrowDown from '../../assets/img/ico/arrow-down.png';
 import prev from '../../assets/img/ico/prev.png';
 import next from '../../assets/img/ico/next.png';
 
-import GridItem from '../../components/Base/Grid/GridItem';
-import GridContainer from '../../components/Base/Grid/GridContainer';
-
 const useStyles = makeStyles((theme) => ({
     icon: {
         display: "none",

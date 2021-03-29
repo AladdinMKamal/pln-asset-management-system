@@ -13,10 +13,17 @@
     }
 
     .pag-btn {
-        background-color: #fff !important;
+        background-color: #fff;
         border: 1px solid #e8ecef;
         width: 47px;
         height: 47px;
+        cursor: pointer;
+    }
+
+    .pag-btn[disabled],
+    .pag-btn:disabled {
+        background-color: #e8ecef;
+        cursor: auto;
     }
 
     .btn-prev {

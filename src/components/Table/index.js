@@ -9,7 +9,7 @@ function Table(props) {
             idProperty="id"
             columns={props.columns}
             dataSource={props.records}
-            style={{ minHeight: 500 }}
+            style={{ minHeight: 440 }}
             pagination
             limit={props.limit}
             skip={props.skip}
