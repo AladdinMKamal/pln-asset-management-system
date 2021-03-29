@@ -195,10 +195,10 @@ function FuelHistory(props) {
                 limit={limit}
                 setLimit={setLimit}
             />
-            <Modal open={openEdit} onClose={handleCloseEdit}>
+            <Modal style={{ maxHeight: "100vh", overflowY: "auto" }} open={openEdit} onClose={handleCloseEdit}>
                 <Edit onCancel={handleCloseEdit} id={editId} editData={editData} handleEdit={handleEdit} />
             </Modal>
-            <Modal open={openDelete} onClose={handleCloseDelete} >
+            <Modal style={{ maxHeight: "100vh", overflowY: "auto" }} open={openDelete} onClose={handleCloseDelete} >
                 <Delete onCancel={handleCloseDelete} id={deleteId} handleDelete={handleDelete} />
             </Modal>
         </div>
